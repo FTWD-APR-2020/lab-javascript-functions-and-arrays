@@ -49,6 +49,23 @@ function sumNumbers(numbers) {
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
+const averageNumbers = (numbers) => {
+  if(numbers.length === 0){
+    return null
+  }
+  return sumNumbers(numbers) / numbers.length
+}
+
+
+const averageWordLength = (arr) => {
+  let lengthArr = arr.map(x => { //seat, correspond, programmign
+    return x.length
+  }) //[4,8,9,]
+  return averageNumbers(lengthArr)
+}
+
+
+
 // Level 2: Array of strings
 const wordsArr = [
   "seat",
