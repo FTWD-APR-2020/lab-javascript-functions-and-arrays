@@ -56,16 +56,6 @@ const averageNumbers = (numbers) => {
   return sumNumbers(numbers) / numbers.length
 }
 
-
-const averageWordLength = (arr) => {
-  let lengthArr = arr.map(x => { //seat, correspond, programmign
-    return x.length
-  }) //[4,8,9,]
-  return averageNumbers(lengthArr)
-}
-
-
-
 // Level 2: Array of strings
 const wordsArr = [
   "seat",
@@ -79,6 +69,13 @@ const wordsArr = [
   "fuel",
   "palace"
 ];
+
+const averageWordLength = (arr) => {
+  let lengthArr = arr.map(x => { //seat, correspond, programmign
+    return x.length
+  }) //[4,8,9,]
+  return averageNumbers(lengthArr)
+}
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
