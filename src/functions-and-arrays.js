@@ -125,6 +125,23 @@ const wordsFind = [
   "disobedience"
 ];
 
+// cannot use indexOf
+
+const doesWordExist = (arr, wordWeAreLookingFor) => {
+  if(arr.length === 0){
+    return null
+  }
+
+  let wordFound = false
+  for(let i=0; i<arr.length; i++){
+    if(arr[i] === wordWeAreLookingFor){
+      wordFound = true;
+    }
+  }
+
+  return wordFound;
+}
+
 // Iteration #7: Count repetition
 const wordsCount = [
   "machine",
