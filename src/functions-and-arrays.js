@@ -45,6 +45,32 @@ function sumNumbers(numbers) {
   return sum;
 }
 
+
+const sum = (arr) => {
+  let sum = 0; 
+  if(arr.length == 0){
+    return 0
+  }
+
+  for(let item of arr){
+    if(typeof item === 'string'){
+      sum += item.length
+    } else if(typeof item == 'number') {
+      sum += item
+    } else {
+      throw new Error(`Unsupported data type sir or ma'am`)
+    }
+  }
+  return Number( ( sum ).toFixed(2) )
+}
+
+
+
+
+
+
+
+
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
@@ -77,6 +103,24 @@ const wordsArr = [
   "fuel",
   "palace"
 ];
+
+
+const avg = (arr) => {
+  let sum = 0; 
+  if(arr.length == 0){
+    return null
+  }
+  for(let item of arr){
+    if(typeof item === 'string'){
+      sum += item.length
+    } else {
+      sum += item
+    }
+  }
+  return Number( ( sum / arr.length ).toFixed(2) )
+}
+const mixedArr = [6, 12, 'miami', 1, true, 'barca', '200', 'lisboa', 8, 10];
+
 
 // const averageWordLength = arr => {
 //   let lengthArr = arr.map(x => {
@@ -166,6 +210,7 @@ const wordsCount = [
 ];
 
 function howManyTimes(array, searchWord) {
+  console.log(array)
   if (array.length === 0) return 0;
   let nTimes = 0;
 
@@ -176,6 +221,40 @@ function howManyTimes(array, searchWord) {
 }
 
 // Iteration #8: Bonus
+
+
+const greatestProduct = (arr) => {
+  let biggestProduct = 0; 
+
+  for(let i=0; i<arr.length; i++){ 
+    let row = arr[i]
+    for(let j=0; j<row.length; j++){ //Rows 
+      let number = row[j]
+      let secondNumber  = row[j+1] ? row[j+1] : 1 
+      let thirdNumber   = row[j+2] ? row[j+2] : 1
+      let fourthNumber  = row[j+3] ? row[j+3] : 1
+      let product = number * secondNumber * thirdNumber * fourthNumber
+      if( product > biggestProduct)
+         biggestProduct = product
+
+      let vNumber = arr[i][j]
+      let vSecondNumber = arr[i+1] ? arr[i+1][j] : 1
+      let vThirdNumber = arr[i+2] ? arr[i+2][j] : 1
+      let vFourthNumber = arr[i+3] ? arr[i+3][j] : 1
+      product =vNumber * vSecondNumber * vThirdNumber * vFourthNumber
+      
+      if( product > biggestProduct)
+         biggestProduct = product
+      
+    }
+  }
+  return biggestProduct
+}
+
+
+
+
+
 
 const matrix = [
   [8, 2, 22, 97, 38, 15, 0, 40, 0, 75, 4, 5, 7, 78, 52, 12, 50, 77, 91, 8],
