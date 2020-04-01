@@ -83,17 +83,38 @@ const wordsArr = [
 // Iteration #5: Unique arrays
 const wordsUnique = [
   "crab",
-  "poison",
+  "poison", //1 == 1
   "contagious",
   "simple",
   "bring",
   "sharp",
   "playground",
-  "poison",
+  "poison", //1 != 7
   "communion",
   "simple",
   "bring"
 ];
+
+const uniquifyArray = (arr) => {
+  if(arr.length === 0){
+    return null
+  }
+
+
+  return [...new Set(arr)]
+
+  return arr.filter((word,i) => {
+    return arr.indexOf(word) === i
+  })
+
+  let outputArr = []
+  for(const word of arr){
+    if(outputArr.indexOf(word) === -1){
+      outputArr.push(word)
+    }
+  }
+  return outputArr
+}
 
 // Iteration #6: Find elements
 const wordsFind = [
