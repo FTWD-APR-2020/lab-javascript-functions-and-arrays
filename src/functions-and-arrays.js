@@ -45,6 +45,7 @@ return sum;
 
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
+
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
 const averageNumbers = (arr) => {
@@ -110,6 +111,34 @@ return newArray;
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
+const doesWordExist = (arr, findWord) => { // declare a function
+  if (arr.length <= 0) { // check if the arr is emty
+    return null
+  }
+
+const found = arr.find((eachWordInArray) => {
+  return(eachWordInArray === findWord) 
+      });
+       console.log(found) 
+     if(found){
+       return true// if exist set to found
+
+     } else {
+
+    return false // if not exist set to false
+}
+
+console.log(found)
+return found // function true or false
+}
+
+doesWordExist(wordsFind, "dog")
+
+
+
+
+
+
 // Iteration #7: Count repetition
 const wordsCount = [
   'machine',
@@ -124,6 +153,7 @@ const wordsCount = [
   'disobedience',
   'matter'
 ];
+
 
 // Iteration #8: Bonus
 
