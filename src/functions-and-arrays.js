@@ -49,22 +49,20 @@ function sumNumbers(numbers) {
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
-const averageNumbers = (numbers) => {
-  if(numbers.length === 0){
-    return null
+const averageNumbers = numbers => {
+  if (numbers.length === 0) {
+    return null;
   }
-  return sumNumbers(numbers) / numbers.length
-}
+  return sumNumbers(numbers) / numbers.length;
+};
 
-
-const averageWordLength = (arr) => {
-  let lengthArr = arr.map(x => { //seat, correspond, programmign
-    return x.length
-  }) //[4,8,9,]
-  return averageNumbers(lengthArr)
-}
-
-
+const averageWordLength = arr => {
+  let lengthArr = arr.map(x => {
+    //seat, correspond, programmign
+    return x.length;
+  }); //[4,8,9,]
+  return averageNumbers(lengthArr);
+};
 
 // Level 2: Array of strings
 const wordsArr = [
@@ -95,26 +93,25 @@ const wordsUnique = [
   "bring"
 ];
 
-const uniquifyArray = (arr) => {
-  if(arr.length === 0){
-    return null
+const uniquifyArray = arr => {
+  if (arr.length === 0) {
+    return null;
   }
 
+  return [...new Set(arr)];
 
-  return [...new Set(arr)]
+  return arr.filter((word, i) => {
+    return arr.indexOf(word) === i;
+  });
 
-  return arr.filter((word,i) => {
-    return arr.indexOf(word) === i
-  })
-
-  let outputArr = []
-  for(const word of arr){
-    if(outputArr.indexOf(word) === -1){
-      outputArr.push(word)
+  let outputArr = [];
+  for (const word of arr) {
+    if (outputArr.indexOf(word) === -1) {
+      outputArr.push(word);
     }
   }
-  return outputArr
-}
+  return outputArr;
+};
 
 // Iteration #6: Find elements
 const wordsFind = [
