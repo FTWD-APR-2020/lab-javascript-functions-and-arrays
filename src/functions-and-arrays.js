@@ -127,19 +127,29 @@ const wordsFind = [
 
 // cannot use indexOf
 
+// const doesWordExist = (arr, wordWeAreLookingFor) => {
+//   if(arr.length === 0){
+//     return null
+//   }
+
+//   let wordFound = false
+//   for(let i=0; i<arr.length; i++){
+//     if(arr[i] === wordWeAreLookingFor){
+//       wordFound = true;
+//     }
+//   }
+
+//   return wordFound;
+// }
+
 const doesWordExist = (arr, wordWeAreLookingFor) => {
   if(arr.length === 0){
     return null
   }
 
-  let wordFound = false
-  for(let i=0; i<arr.length; i++){
-    if(arr[i] === wordWeAreLookingFor){
-      wordFound = true;
-    }
-  }
-
-  return wordFound;
+  return arr.includes(wordWeAreLookingFor)
+  // let wordFound = arr.includes(wordWeAreLookingFor)
+  // return wordFound;
 }
 
 // Iteration #7: Count repetition
