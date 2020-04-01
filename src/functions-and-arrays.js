@@ -45,16 +45,50 @@ function sumNumbers(numbers) {
   return sum;
 }
 
+
+const sum = (arr) => {
+  let sum = 0; 
+  if(arr.length == 0){
+    return 0
+  }
+
+  for(let item of arr){
+    if(typeof item === 'string'){
+      sum += item.length
+    } else if(typeof item == 'number') {
+      sum += item
+    } else {
+      throw new Error(`Unsupported data type sir or ma'am`)
+    }
+  }
+  return Number( ( sum ).toFixed(2) )
+}
+
+
+
+
+
+
+
+
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
-const averageNumbers = (numbers) => {
-  if(numbers.length === 0){
-    return null
+const averageNumbers = numbers => {
+  if (numbers.length === 0) {
+    return null;
   }
-  return sumNumbers(numbers) / numbers.length
-}
+  return sumNumbers(numbers) / numbers.length;
+};
+
+const averageWordLength = arr => {
+  let lengthArr = arr.map(x => {
+    //seat, correspond, programmign
+    return x.length;
+  }); //[4,8,9,]
+  return averageNumbers(lengthArr);
+};
 
 // Level 2: Array of strings
 const wordsArr = [
@@ -70,12 +104,31 @@ const wordsArr = [
   "palace"
 ];
 
-const averageWordLength = (arr) => {
-  let lengthArr = arr.map(x => { //seat, correspond, programmign
-    return x.length
-  }) //[4,8,9,]
-  return averageNumbers(lengthArr)
+
+const avg = (arr) => {
+  let sum = 0; 
+  if(arr.length == 0){
+    return null
+  }
+  for(let item of arr){
+    if(typeof item === 'string'){
+      sum += item.length
+    } else {
+      sum += item
+    }
+  }
+  return Number( ( sum / arr.length ).toFixed(2) )
 }
+const mixedArr = [6, 12, 'miami', 1, true, 'barca', '200', 'lisboa', 8, 10];
+
+
+// const averageWordLength = arr => {
+//   let lengthArr = arr.map(x => {
+//     //seat, correspond, programmign
+//     return x.length;
+//   }); //[4,8,9,]
+//   return averageNumbers(lengthArr);
+// };
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
@@ -92,26 +145,25 @@ const wordsUnique = [
   "bring"
 ];
 
-const uniquifyArray = (arr) => {
-  if(arr.length === 0){
-    return null
+const uniquifyArray = arr => {
+  if (arr.length === 0) {
+    return null;
   }
 
+  return [...new Set(arr)];
 
-  return [...new Set(arr)]
+  return arr.filter((word, i) => {
+    return arr.indexOf(word) === i;
+  });
 
-  return arr.filter((word,i) => {
-    return arr.indexOf(word) === i
-  })
-
-  let outputArr = []
-  for(const word of arr){
-    if(outputArr.indexOf(word) === -1){
-      outputArr.push(word)
+  let outputArr = [];
+  for (const word of arr) {
+    if (outputArr.indexOf(word) === -1) {
+      outputArr.push(word);
     }
   }
-  return outputArr
-}
+  return outputArr;
+};
 
 // Iteration #6: Find elements
 const wordsFind = [
@@ -143,8 +195,8 @@ const wordsFind = [
 // }
 
 const doesWordExist = (arr, wordWeAreLookingFor) => {
-  if(arr.length === 0){
-    return null
+  if (arr.length === 0) {
+    return null;
   }
 
   return arr.includes(wordWeAreLookingFor)
@@ -167,7 +219,52 @@ const wordsCount = [
   "matter"
 ];
 
+function howManyTimes(array, searchWord) {
+  console.log(array)
+  if (array.length === 0) return 0;
+  let nTimes = 0;
+
+  for (let word of array) {
+    if (word === searchWord) nTimes++;
+  }
+  return nTimes;
+}
+
 // Iteration #8: Bonus
+
+
+const greatestProduct = (arr) => {
+  let biggestProduct = 0; 
+
+  for(let i=0; i<arr.length; i++){ 
+    let row = arr[i]
+    for(let j=0; j<row.length; j++){ //Rows 
+      let number = row[j]
+      let secondNumber  = row[j+1] ? row[j+1] : 1 
+      let thirdNumber   = row[j+2] ? row[j+2] : 1
+      let fourthNumber  = row[j+3] ? row[j+3] : 1
+      let product = number * secondNumber * thirdNumber * fourthNumber
+      if( product > biggestProduct)
+         biggestProduct = product
+
+      let vNumber = arr[i][j]
+      let vSecondNumber = arr[i+1] ? arr[i+1][j] : 1
+      let vThirdNumber = arr[i+2] ? arr[i+2][j] : 1
+      let vFourthNumber = arr[i+3] ? arr[i+3][j] : 1
+      product =vNumber * vSecondNumber * vThirdNumber * vFourthNumber
+      
+      if( product > biggestProduct)
+         biggestProduct = product
+      
+    }
+  }
+  return biggestProduct
+}
+
+
+
+
+
 
 const matrix = [
   [8, 2, 22, 97, 38, 15, 0, 40, 0, 75, 4, 5, 7, 78, 52, 12, 50, 77, 91, 8],
