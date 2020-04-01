@@ -34,12 +34,16 @@ return longestWord;
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 const sumNumbers = (arr) => {
 
-let sum = 0;
-for (let num of arr) {
-  sum += num;
-}
-return sum;
+// let sum = 0;
+// for (let num of arr) {
+//   sum += num;
+// }
+// return sum;
 
+const sum () => {
+let newArray = []
+if(arr.length === 0) {
+  return null;
 }
 
 
@@ -72,6 +76,7 @@ const averageWordLength = (arr) => {
     return null;
   }
 for (let word of arr) {
+  if(typeof word === " ")
   sum += word.length;
 }
 return sum / arr.length;
@@ -132,7 +137,6 @@ console.log(found)
 return found // function true or false
 }
 
-doesWordExist(wordsFind, "dog")
 
 
 
@@ -154,6 +158,18 @@ const wordsCount = [
   'matter'
 ];
 
+function howMantTimes(array, searchWord){
+  if(array.length === 0) return 0;
+  let nTimes = 0;
+
+  //for(let i = 0; i < array.length; i++);
+ // if(arr[i] === searchWord) nTimes++;
+ for(let word of arrar) {
+   of (word === searchWord) nTimes++;
+ //}
+}
+return nTimes;
+}
 
 // Iteration #8: Bonus
 
@@ -179,3 +195,28 @@ const matrix = [
   [20, 73, 35, 29, 78, 31, 90, 1, 74, 31, 49, 71, 48, 86, 81, 16, 23, 57, 5, 54],
   [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]
 ];
+
+
+const greastestroduct = (arr) => {
+  let biggestProduct = 0;
+
+  for(let i= 0; i <arr.length; i++){
+    let row = arr[i]
+    for(let j=0; j<row.length; j++){
+      let number = row[j]
+      let secondNumber = row[j+1] ? row[j+1] : 1
+      let thirdNumber = row[j+2] : 1
+      let fourthNumber = row[j+3] ? row[j++] : 1
+      let product = number * secondNumber * thirdNumber * fourthNumber
+
+      let vNumber = arr[i][i+1]
+      let vs
+
+      if(product > biggestProduct)
+
+    }
+
+  }
+}
+
+
