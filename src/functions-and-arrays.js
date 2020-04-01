@@ -78,6 +78,14 @@ const wordsArr = [
   "palace"
 ];
 
+// const averageWordLength = arr => {
+//   let lengthArr = arr.map(x => {
+//     //seat, correspond, programmign
+//     return x.length;
+//   }); //[4,8,9,]
+//   return averageNumbers(lengthArr);
+// };
+
 // Iteration #5: Unique arrays
 const wordsUnique = [
   "crab",
@@ -125,6 +133,23 @@ const wordsFind = [
   "disobedience"
 ];
 
+// cannot use indexOf
+
+const doesWordExist = (arr, wordWeAreLookingFor) => {
+  if (arr.length === 0) {
+    return null;
+  }
+
+  let wordFound = false;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === wordWeAreLookingFor) {
+      wordFound = true;
+    }
+  }
+
+  return wordFound;
+};
+
 // Iteration #7: Count repetition
 const wordsCount = [
   "machine",
@@ -139,6 +164,16 @@ const wordsCount = [
   "disobedience",
   "matter"
 ];
+
+function howManyTimes(array, searchWord) {
+  if (array.length === 0) return 0;
+  let nTimes = 0;
+
+  for (let word of array) {
+    if (word === searchWord) nTimes++;
+  }
+  return nTimes;
+}
 
 // Iteration #8: Bonus
 
