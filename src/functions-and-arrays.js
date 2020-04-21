@@ -9,6 +9,8 @@ const maxOfTwoNumbers = (num1,num2) => {
   }
 }
 
+const maxOfTwoNumbers = (num1, num2) ? num1 : num2; 
+
 
 
 // // Iteration #2: Find longest word
